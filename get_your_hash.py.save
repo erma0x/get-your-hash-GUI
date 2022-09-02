@@ -56,8 +56,8 @@ def saveFile():
     f = filedialog.asksaveasfile(mode='w', defaultextension=".txt")
     if f is None: # asksaveasfile return `None` if dialog closed with "cancel".
         return
-    #text2save = str(txtarea.get(1.0, END)) # starts from `1.0`, not `0.0`
-    f.write(str(your_hash.get())) #1.0,END)))
+    text2save = str(txtarea.get(1.0, END)) # starts from `1.0`, not `0.0`
+    f.write(text2save)
     f.close()
     
     
@@ -69,7 +69,7 @@ window.configure(background="white")
 window.config(cursor="hand2")
 
 # setting window size
-window.geometry('700x600')
+window.geometry('500x550')
 
 # variables
 hashing_method = StringVar()
@@ -120,16 +120,16 @@ your_hash.place(x=30,y=490)
 # txt_encryption.focus() # set focus to entry widget -> can write text right away
 
 # openfile button
-openfiles = Button(window, text = "OPEN", bg = "black", fg = "white", command = openfile, font = ('calibri', 8, 'bold'))
-openfiles.place(x = 520, y=110)
+openfiles = Button(window, text = "open file", bg = "black", fg = "white", command = openfile, font = ('calibri', 8, 'bold'))
+openfiles.place(x = 420, y=310)
 
 # save button
-save_button = Button(window,text="SAVE",command=saveFile,height = 1, width = 6, bg = "black", fg = "green", font = ('calibri', 8, 'bold'))
-save_button.place(x=520,y=150)
+save_button = Button(window,text="SAVE FILOPEE",command=saveFile,height = 1, width = 6, bg = "black", fg = "green", font = ('calibri', 8, 'bold'))
+save_button.place(x=420,y=350)
 
 # quit button
 quit_btt = Button(window, text = 'QUIT', command = window.destroy,font =('calibri', 8, 'bold'), bg='black',foreground = 'red')
-quit_btt.place(x=520,y=190)
+quit_btt.place(x=420,y=390)
 
 
 window.mainloop()
